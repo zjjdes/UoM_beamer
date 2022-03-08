@@ -1,13 +1,8 @@
-# stanford_beamer_presentation
-This is an unofficial LaTeX Beamer presentation template with Stanford University theme.
+# UoM_beamer
+This is an unofficial LaTeX Beamer presentation template with The University of Melbourne theme.
 
-Feel free to use this template for your project presentations, conference talks, etc.
+This repository is forked from [sanhacheong/stanford-beamer-presentation](https://github.com/sanhacheong/stanford-beamer-presentation). The color theme is designed based on [the official UoM color palette](https://brandhub.unimelb.edu.au/guidelines/colour-palette).
 
-The repository includes [a simple example file](./example_slides.pdf) (with the [`.tex`](./example_slides.tex) source code) and [a full, example presentation slides](full_talk.pdf) of my own (no `.tex` source code provided).
+Citations are numbered and rendered in the footnotes with author name, journal and year (printed items can be changed around line 42 in [packages.tex](./preambles/packages.tex)). Use `\autocite{paper} \foorpartcite{paper}` to cite for the first time. For subsequent citations, use `\autocite{paper}` only.
 
-## Example Slides
-
-![Example Slide 1](example_slides_img/example_slides-1.jpg "Example Slide 1")
-![Example Slide 2](example_slides_img/example_slides-2.jpg "Example Slide 2")
-![Example Slide 3](example_slides_img/example_slides-3.jpg "Example Slide 3")
-![Example Slide 4](example_slides_img/example_slides-4.jpg "Example Slide 4")
+To disable footnote citations and print citations in a References section using APA, uncomment the last frame in the slides, comment lines 35-55 and uncomment lines 33-34 in [packages.tex](./preambles/packages.tex).

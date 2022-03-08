@@ -1,0 +1,76 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/color/beamercolorthemestanford.sty,v 1.4 2007/01/28 20:48:24 tantau Exp $
+
+% UOM colour palette from https://brandhub.unimelb.edu.au/guidelines/colour-palette
+\definecolor{uomblue}{RGB}{9,65,131}
+\definecolor{darkuomblue}{RGB}{1,42,88}
+\definecolor{black}{RGB}{0,0,0}
+\definecolor{grey}{RGB}{153,162,170}
+\definecolor{darkteal}{RGB}{63,167,194}
+\definecolor{lightteal}{RGB}{124,189,206}
+\definecolor{darkemerald}{RGB}{89,177,127}
+\definecolor{lightemerald}{RGB}{152,214,195}
+\definecolor{darkblue}{RGB}{64,116,178}
+\definecolor{lightblue}{RGB}{173,205,240}
+\definecolor{darkyellow}{RGB}{236,174,101}
+\definecolor{lightyellow}{RGB}{255,220,162}
+\definecolor{darkorange}{RGB}{231,112,82}
+\definecolor{lightorange}{RGB}{255,164,120}
+\definecolor{darkgreen}{RGB}{161,209,114}
+\definecolor{lightgreen}{RGB}{218,226,153}
+\definecolor{darkpurple}{RGB}{114,131,191}
+\definecolor{lightpurple}{RGB}{176,188,225}
+\definecolor{darkpink}{RGB}{238,136,137}
+\definecolor{lightpink}{RGB}{255,189,204}
+\definecolor{cardinalred}{RGB}{140,21,21}
+\definecolor{boxgray}{RGB}{238,235,233}
+
+
+
+\mode<presentation>
+
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg= uomblue}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg= grey}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg= darkteal}
+\setbeamercolor*{palette quaternary}{fg=white,bg= darkemerald}
+
+\setbeamercolor*{sidebar}{use=structure,bg= lightteal}
+\setbeamercolor*{footer}{use=structure,bg= darkuomblue,fg=white}
+  
+\setbeamercolor*{palette sidebar primary}{use=structure,fg=structure.fg!10}
+\setbeamercolor*{palette sidebar secondary}{fg=white}
+\setbeamercolor*{palette sidebar tertiary}{use=structure,fg=structure.fg!50}
+\setbeamercolor*{palette sidebar quaternary}{fg=white}
+
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor*{foot line}{parent=palette secondary}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+
+\setbeamercolor{itemize item}{fg=uomblue}
+\setbeamercolor{itemize subitem}{fg=uomblue}
+\setbeamercolor{itemize subsubitem}{fg=uomblue}
+\setbeamercolor{enumerate item}{fg=uomblue}
+\setbeamercolor{enumerate subitem}{fg=uomblue}
+\setbeamercolor{enumerate subsubitem}{fg=uomblue}
+\setbeamercolor{description item}{fg=uomblue}
+
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{frametitle continuation}[from second]
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black}
+\setbeamercolor*{bibliography entry note}{fg=black}
+
+
+\mode
+<all>
