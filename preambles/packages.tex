@@ -30,40 +30,52 @@
 \usepackage{physics}
 
 %% Citation
-% \usepackage[round]{natbib}
 % \usepackage[natbibapa]{NJDapacite} % ION APA
-\usepackage[style=numeric,backend=bibtex]{biblatex}
-\addbibresource{references}
-\DeclareCiteCommand{\footpartcite}[\mkbibfootnote] % For citations in the footnote
-{\usebibmacro{prenote}}%
-{\usebibmacro{citeindex}%
-    \mkbibbrackets{\usebibmacro{cite}}%
-    \setunit{\addnbspace}
-    %% Name, title, year
-    % \printnames{labelname}%
-    % \setunit{\labelnamepunct}
-    % \printfield[citetitle]{title}%
-    % \newunit
-    %% Name, journal, year
-    \printnames{labelname}%
-    ,
-    \printfield[]{journal}%
-    \printfield[]{booktitle}%
-    ,
-    \printfield[]{year}}
-{\addsemicolon\space}
-{\usebibmacro{postnote}}
 
-%%%\DeclareMultiCiteCommand{\footpartcites}[\mkbibfootnote]{\footpartcite}{\addsemicolon\space}
-
-\setbeamercolor{footnote}{bg=darkuomblue}
-% \setbeamercolor{footnote mark}{bg=cardinalred}
-\setbeamerfont{footnote}{size=\tiny}
-\setbeamertemplate{footnote}{\insertfootnotetext}
-
-\makeatletter
-\def\@makefnmark{}
-\makeatother
+% For citations in the footnote {
+  \usepackage[style=numeric,backend=bibtex,citecounter=true,citetracker=true]{biblatex}
+  \addbibresource{references}
+  
+  \let\svthefootnote\thefootnote
+  
+  \makeatletter
+  % https://tex.stackexchange.com/a/29931/38244
+  \DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}%
+  {%
+    \ifciteseen{}{%
+      \usebibmacro{citeindex}%
+      \let\thefootnote\relax%
+      \footnotetext{%
+        \blx@anchor
+        \mkbibbrackets{\usebibmacro{cite}}%
+        \setunit{\addnbspace}
+          %% Name, title, year
+          % \printnames{labelname}%
+          % \setunit{\labelnamepunct}
+          % \printfield[citetitle]{title}%
+          % \newunit
+          %% Name, journal, year
+          \printnames{author}%
+          \setunit{\labelnamepunct}
+          \printfield[]{journaltitle}%
+          \printfield[]{booktitle}%
+          \newunit
+          \printfield[]{year}%
+      }%
+      \let\thefootnote\svthefootnote%
+    }%
+    \autocite{\thefield{entrykey}}%
+  }
+  {\addsemicolon\space}
+  {\usebibmacro{postnote}}
+  \makeatother
+  
+  \setbeamercolor{footnote}{bg=darkuomblue}
+  % \setbeamercolor{footnote mark}{bg=cardinalred}
+  \setbeamerfont{footnote}{size=\tiny}
+  \setbeamertemplate{footnote}{\insertfootnotetext}
+  % }
 
 %%%for color citation%%%%%%%%%%%%%%%%%%%
 % \usepackage{xcolor}
